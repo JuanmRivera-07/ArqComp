@@ -1,8 +1,8 @@
 
 /*!
 \file   Secuencia_Main.c
-\date   2020-11-13
-\author Fulvio Vivas <fulvio.vivas@unicauca.edu.co>
+\date   2020-11-19
+\author Juan Manuel Rivera <juanmanriv@unicauca.edu.co>
 \brief  Example Secuencia_Main.
 
 \par Copyright
