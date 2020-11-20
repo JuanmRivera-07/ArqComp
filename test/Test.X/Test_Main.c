@@ -23,9 +23,10 @@ publicación prevista de este material.
 #include <pic18f4550.h>
 #include <xc.h>
 #include "Configuracion.h"
+#include "Utilidades.h"
 
 #define LED LATB
-void MS_delay(unsigned int);
+
 void  main ()
 {
     OSCCON = 0x72 ;        /* Utilice un oscilador interno de frecuencia de 8MHz */
@@ -40,12 +41,7 @@ void  main ()
         __delay_ms(500);
     }
 }
-void  MS_delay ( unsigned  int val)
-{
- unsigned  int i, j;
- for (i = 0 ; i <val; i ++)
-     for (j = 0 ; j < 165 ; j ++);  /* Este recuento proporciona un retardo de 1 ms para una frecuencia de 8 MHz */
-} 
+
 
 //#define __USER__
 //

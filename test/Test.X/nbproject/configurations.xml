@@ -20,6 +20,8 @@
       <itemPath>Makefile</itemPath>
     </logicalFolder>
     <itemPath>Configuracion.h</itemPath>
+    <itemPath>Utilidades.h</itemPath>
+    <itemPath>Utilidades.c</itemPath>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>

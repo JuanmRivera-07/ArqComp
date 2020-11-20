@@ -3596,91 +3596,48 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x EBTR3=OFF ]
 "88
 [p x EBTRB=OFF ]
-[; ;Test_Main.c: 28: void MS_delay(unsigned int);
+[; ;Utilidades.h: 15: void MS_delay(unsigned int);
 [v $root$_main `(v ~T0 @X0 0 e ]
-"29 Test_Main.c
+"30 Test_Main.c
 [v _main `(v ~T0 @X0 1 ef ]
-"30
+"31
 {
-[; ;Test_Main.c: 29: void main ()
-[; ;Test_Main.c: 30: {
+[; ;Test_Main.c: 30: void main ()
+[; ;Test_Main.c: 31: {
 [e :U _main ]
 [f ]
-[; ;Test_Main.c: 31: OSCCON = 0x72 ;
-"31
-[e = _OSCCON -> -> 114 `i `uc ]
-[; ;Test_Main.c: 32: TRISB = 0x00 ;
+[; ;Test_Main.c: 32: OSCCON = 0x72 ;
 "32
-[e = _TRISB -> -> 0 `i `uc ]
-[; ;Test_Main.c: 33: while (1)
+[e = _OSCCON -> -> 114 `i `uc ]
+[; ;Test_Main.c: 33: TRISB = 0x00 ;
 "33
-[e :U 364 ]
-[; ;Test_Main.c: 34: {
+[e = _TRISB -> -> 0 `i `uc ]
+[; ;Test_Main.c: 34: while (1)
 "34
-{
-[; ;Test_Main.c: 35: LATB = 0xff ;
+[e :U 364 ]
+[; ;Test_Main.c: 35: {
 "35
+{
+[; ;Test_Main.c: 36: LATB = 0xff ;
+"36
 [e = _LATB -> -> 255 `i `uc ]
-[; ;Test_Main.c: 37: _delay((unsigned long)((500)*(8000000/4000.0)));
-"37
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;Test_Main.c: 38: LATB = 0 ;
+[; ;Test_Main.c: 38: _delay((unsigned long)((500)*(8000000/4000.0)));
 "38
-[e = _LATB -> -> 0 `i `uc ]
-[; ;Test_Main.c: 40: _delay((unsigned long)((500)*(8000000/4000.0)));
-"40
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;Test_Main.c: 39: LATB = 0 ;
+"39
+[e = _LATB -> -> 0 `i `uc ]
+[; ;Test_Main.c: 41: _delay((unsigned long)((500)*(8000000/4000.0)));
 "41
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"42
 }
 [e :U 363 ]
-"33
+"34
 [e $U 364  ]
 [e :U 365 ]
-[; ;Test_Main.c: 41: }
 [; ;Test_Main.c: 42: }
-"42
+[; ;Test_Main.c: 43: }
+"43
 [e :UE 362 ]
-}
-"43
-[v _MS_delay `(v ~T0 @X0 1 ef1`ui ]
-"44
-{
-[; ;Test_Main.c: 43: void MS_delay ( unsigned int val)
-[; ;Test_Main.c: 44: {
-[e :U _MS_delay ]
-"43
-[v _val `ui ~T0 @X0 1 r1 ]
-"44
-[f ]
-"45
-[v _i `ui ~T0 @X0 1 a ]
-[v _j `ui ~T0 @X0 1 a ]
-[; ;Test_Main.c: 45: unsigned int i, j;
-[; ;Test_Main.c: 46: for (i = 0 ; i <val; i ++)
-"46
-{
-[e = _i -> -> 0 `i `ui ]
-[e $U 370  ]
-"47
-[e :U 367 ]
-[; ;Test_Main.c: 47: for (j = 0 ; j < 165 ; j ++);
-{
-[e = _j -> -> 0 `i `ui ]
-[e $ < _j -> -> 165 `i `ui 371  ]
-[e $U 372  ]
-[e :U 371 ]
-[e ++ _j -> -> 1 `i `ui ]
-[e $ < _j -> -> 165 `i `ui 371  ]
-[e :U 372 ]
-}
-"46
-[e ++ _i -> -> 1 `i `ui ]
-[e :U 370 ]
-[e $ < _i _val 367  ]
-[e :U 368 ]
-"47
-}
-[; ;Test_Main.c: 48: }
-"48
-[e :UE 366 ]
 }

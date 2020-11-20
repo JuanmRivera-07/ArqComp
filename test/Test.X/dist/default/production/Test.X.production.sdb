@@ -23,7 +23,7 @@
 [v ___flmul __flmul `(d  1 e 3 0 ]
 "15 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
-"29 D:\Semestre 5\Arquitectura Computacional\ArqComp\test\Test.X\Test_Main.c
+"30 D:\Semestre 5\Arquitectura Computacional\ArqComp\test\Test.X\Test_Main.c
 [v _main main `(v  1 e 1 0 ]
 "3071 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18f4550.h
 [v _LATB LATB `VEuc  1 e 1 @3978 ]
@@ -31,8 +31,8 @@
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
 "7984
 [v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
-"29 D:\Semestre 5\Arquitectura Computacional\ArqComp\test\Test.X\Test_Main.c
+"30 D:\Semestre 5\Arquitectura Computacional\ArqComp\test\Test.X\Test_Main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"42
+"43
 } 0

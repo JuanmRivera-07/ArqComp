@@ -4868,8 +4868,10 @@ extern __nonreentrant void _delay3(unsigned char);
 
 #pragma config EBTRB = OFF
 
-# 28 "Test_Main.c"
+# 15 "Utilidades.h"
 void MS_delay(unsigned int);
+
+# 30 "Test_Main.c"
 void main ()
 {
 OSCCON = 0x72 ;
@@ -4883,11 +4885,5 @@ LATB = 0 ;
 
 _delay((unsigned long)((500)*(8000000/4000.0)));
 }
-}
-void MS_delay ( unsigned int val)
-{
-unsigned int i, j;
-for (i = 0 ; i <val; i ++)
-for (j = 0 ; j < 165 ; j ++);
 }
 
