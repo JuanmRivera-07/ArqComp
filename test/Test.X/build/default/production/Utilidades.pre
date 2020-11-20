@@ -5,7 +5,7 @@
 void MS_delay(unsigned int);
 
 # 3 "Utilidades.c"
-void MS_delay ( unsigned int val)
+void Ms_delay ( unsigned int val)
 {
 unsigned int i, j;
 for (i = 0 ; i <val; i ++)

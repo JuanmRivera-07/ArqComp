@@ -1,12 +1,12 @@
 Version 3.2 HI-TECH Software Intermediate Code
 [; ;Utilidades.h: 15: void MS_delay(unsigned int);
 "3 Utilidades.c
-[v _MS_delay `(v ~T0 @X0 1 ef1`ui ]
+[v _Ms_delay `(v ~T0 @X0 1 ef1`ui ]
 "4
 {
-[; ;Utilidades.c: 3: void MS_delay ( unsigned int val)
+[; ;Utilidades.c: 3: void Ms_delay ( unsigned int val)
 [; ;Utilidades.c: 4: {
-[e :U _MS_delay ]
+[e :U _Ms_delay ]
 "3
 [v _val `ui ~T0 @X0 1 r1 ]
 "4

@@ -1,6 +1,20 @@
 #include "Utilidades.h"
 
-void  MS_delay ( unsigned  int val)
+/* F ********************************************* ***************************
+* NOMBRE: MS_delay
+* ------------------------------------------------- ---------------------------
+* PARAMES:
+* val: retraso en milisegundos
+* retorno: ninguno
+* ------------------------------------------------- ---------------------------
+* PROPÓSITO:
+* Establecer un retraso en milisegundos
+* ------------------------------------------------- ---------------------------
+* NOTA:
+* 9
+************************************************ ************************** */
+
+void  Ms_delay ( unsigned  int val)
 {
  unsigned  int i, j;
  for (i = 0 ; i <val; i ++)

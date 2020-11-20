@@ -1,5 +1,5 @@
 
-# 1 "Test_Main.c"
+# 1 "Secuencia_Main.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -4806,19 +4806,14 @@ extern __nonreentrant void _delaywdt(unsigned long);
 extern __nonreentrant void _delay3(unsigned char);
 
 
-# 29 "Configuracion.h"
-#pragma config PLLDIV = 1
-#pragma config CPUDIV = OSC1_PLL2
-#pragma config USBDIV = 1
-
-
-#pragma config FOSC = INTOSCIO_EC
+# 27 "Fuses.h"
+#pragma config FOSC = INTOSC_EC
 #pragma config FCMEN = OFF
 #pragma config IESO = OFF
 
 
 #pragma config PWRT = OFF
-#pragma config BOR = OFF
+#pragma config BOR = ON
 #pragma config BORV = 3
 #pragma config VREGEN = OFF
 
@@ -4828,9 +4823,9 @@ extern __nonreentrant void _delay3(unsigned char);
 
 
 #pragma config CCP2MX = ON
-#pragma config PBADEN = ON
+#pragma config PBADEN = OFF
 #pragma config LPT1OSC = OFF
-#pragma config MCLRE = OFF
+#pragma config MCLRE = ON
 
 
 #pragma config STVREN = ON
@@ -4868,24 +4863,102 @@ extern __nonreentrant void _delay3(unsigned char);
 
 #pragma config EBTRB = OFF
 
-# 15 "Utilidades.h"
-void MS_delay(unsigned int);
+# 26 "Secuencia_Main.c"
+void secuencial_Efecto1(void);
+void secuencial_Efecto2(void);
+void secuencial_Efecto3(void);
+void secuencial_Efecto4(void);
 
-# 40 "Test_Main.c"
-void main ()
-{
-OSCCON = 0x72 ;
-TRISB = 0x00 ;
-while (1)
-{
-LATB = 0xff ;
+unsigned char efecto = 1;
+unsigned long velocidad = 1;
 
-_delay((unsigned long)((500)*(8000000/4000.0)));
+# 42
+int main(void) {
+TRISD = 0;
+LATD = 0;
+TRISBbits.TRISB7 = 1;
+TRISBbits.TRISB6 = 1;
+INTCON2bits.RBPU = 0;
+while (1) {
 
-LATB = 0 ;
+if (!PORTBbits.RB7) {
+_delay((unsigned long)((50)*(8000000/4000.0)));
+if(++efecto==5){efecto=1;}
+}
 
-_delay((unsigned long)((500)*(8000000/4000.0)));
-
+switch (efecto) {
+case 1: secuencial_Efecto1();
+break;
+case 2: secuencial_Efecto2();
+break;
+case 3: secuencial_Efecto3();
+break;
+case 4: secuencial_Efecto4();
+break;
 }
 }
+return 1;
+}
 
+void secuencial_Efecto1(void) {
+for (int i = 0; i < 8; i++) {
+LATD = 1 << i;
+if(velocidad==1){_delay((unsigned long)((50)*(8000000/4000.0)));}
+else if(velocidad==2){_delay((unsigned long)((100)*(8000000/4000.0)));}
+else if(velocidad==3){_delay((unsigned long)((200)*(8000000/4000.0)));}
+else if(velocidad==4){_delay((unsigned long)((400)*(8000000/4000.0)));}
+
+if (!PORTBbits.RB6) {
+_delay((unsigned long)((50)*(8000000/4000.0)));
+if(++velocidad==5){velocidad=1;}
+}
+}
+}
+
+void secuencial_Efecto2(void) {
+for (int i = 0, j = 7; i < 8; i++, j--) {
+LATD = (1 << i) + (1 << j);
+if(velocidad==1){_delay((unsigned long)((50)*(8000000/4000.0)));}
+else if(velocidad==2){_delay((unsigned long)((100)*(8000000/4000.0)));}
+else if(velocidad==3){_delay((unsigned long)((200)*(8000000/4000.0)));}
+else if(velocidad==4){_delay((unsigned long)((400)*(8000000/4000.0)));}
+
+if (!PORTBbits.RB6) {
+_delay((unsigned long)((50)*(8000000/4000.0)));
+if(++velocidad==5){velocidad=1;}
+}
+}
+}
+
+void secuencial_Efecto3(void) {
+for (int i = 0; i < 9; i++) {
+LATD = (1 << i) - 1;
+if(velocidad==1){_delay((unsigned long)((50)*(8000000/4000.0)));}
+else if(velocidad==2){_delay((unsigned long)((100)*(8000000/4000.0)));}
+else if(velocidad==3){_delay((unsigned long)((200)*(8000000/4000.0)));}
+else if(velocidad==4){_delay((unsigned long)((400)*(8000000/4000.0)));}
+
+if (!PORTBbits.RB6) {
+_delay((unsigned long)((50)*(8000000/4000.0)));
+if(++velocidad==5){velocidad=1;}
+}
+}
+}
+
+void secuencial_Efecto4(void) {
+volatile unsigned int m=0,n=0;
+for (int i = 0; i < 5; i++) {
+LATD = m+n;
+m += (1 << i) & 0x0f;
+n += (1 << (7-i)) & 0xf0;
+if(velocidad==1){_delay((unsigned long)((50)*(8000000/4000.0)));}
+else if(velocidad==2){_delay((unsigned long)((100)*(8000000/4000.0)));}
+else if(velocidad==3){_delay((unsigned long)((200)*(8000000/4000.0)));}
+else if(velocidad==4){_delay((unsigned long)((400)*(8000000/4000.0)));}
+
+if (!PORTBbits.RB6) {
+_delay((unsigned long)((50)*(8000000/4000.0)));
+if(++velocidad==5){velocidad=1;}
+}
+}
+}
