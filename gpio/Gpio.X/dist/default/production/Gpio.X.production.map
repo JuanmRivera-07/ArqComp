@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v1.44\dat\en_msgs.txt -cs \
   -h+dist/default/production\Gpio.X.production.sym \
   --cmf=dist/default/production\Gpio.X.production.cmf -z -Q18F4550 \
-  -oC:\Users\Rivera\AppData\Local\Temp\sogc.2 \
+  -oC:\Users\Rivera\AppData\Local\Temp\sl94.2 \
   -Mdist/default/production/Gpio.X.production.map -E1 -ver=XC8 \
   -ASTACK=060h-07ffh -pstack=STACK -ACODE=00h-07FFFh -ACONST=00h-07FFFh \
   -ASMALLCONST=0800h-08FFhx120 -AMEDIUMCONST=0800h-07FFFh -ACOMRAM=01h-05Fh \
@@ -22,7 +22,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\Rivera\AppData\Local\Temp\sogc.obj \
+  C:\Users\Rivera\AppData\Local\Temp\sl94.obj \
   dist/default/production\Gpio.X.production.obj 
 
 Object code version is 3.11
@@ -35,33 +35,35 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Rivera\AppData\Local\Temp\sogc.obj
+C:\Users\Rivera\AppData\Local\Temp\sl94.obj
                 init                                  0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
 dist/default/production\Gpio.X.production.obj
-                text4                              7B44     7B44      110     3DA2       0
-                text3                              7D64     7D64      134     3EB2       0
-                text2                              7C54     7C54      110     3E2A       0
-                text1                              7E98     7E98      168     3F4C       0
-                text0                              7AE0     7AE0       64     3D70       0
-                cstackCOMRAM                          1        1        A        1       1
-                dataCOMRAM                            B        B        5        1       1
-                cinit                              7AB6     7AB6       2A     3D5B       0
-                idataCOMRAM                        7AB1     7AB1        5     7AB1       0
+                text5                              7F56     7F56       AA     3FAB       0
+                text4                              7D66     7D66       44     3EB3       0
+                text3                              7E52     7E52       68     3F29       0
+                text2                              7DAA     7DAA       44     3ED5       0
+                text1                              7EBA     7EBA       9C     3F5D       0
+                text0                              7DEE     7DEE       64     3EF7       0
+                cstackCOMRAM                          1        1        E        1       1
+                dataCOMRAM                            F        F        5        1       1
+                cinit                              7D3C     7D3C       2A     3E9E       0
+                idataCOMRAM                        7D37     7D37        5     7D37       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
                 init                                  0        0        4         0
-                text4                              7B44     7B44      110         0
-                text3                              7D64     7D64      134         0
-                text2                              7C54     7C54      110         0
-                text1                              7E98     7E98      168         0
-                text0                              7AE0     7AE0       64         0
-                cinit                              7AB6     7AB6       2A         0
-                idataCOMRAM                        7AB1     7AB1        5         0
+                text5                              7F56     7F56       AA         0
+                text4                              7D66     7D66       44         0
+                text3                              7E52     7E52       68         0
+                text2                              7DAA     7DAA       44         0
+                text1                              7EBA     7EBA       9C         0
+                text0                              7DEE     7DEE       64         0
+                cinit                              7D3C     7D3C       2A         0
+                idataCOMRAM                        7D37     7D37        5         0
 
         CLASS   CONST          
 
@@ -70,8 +72,8 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   MEDIUMCONST    
 
         CLASS   COMRAM         
-                cstackCOMRAM                          1        1        A         1
-                dataCOMRAM                            B        B        5         1
+                cstackCOMRAM                          1        1        E         1
+                dataCOMRAM                            F        F        5         1
 
         CLASS   ABS1           
 
@@ -112,14 +114,15 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
-                cstackCOMRAM                   000001  00000F  000010         1       1  COMRAM  
-                idataCOMRAM                    007AB1  000005  007AB6      7AB1       0  CODE    
-                cinit                          007AB6  00002A  007AE0      3D5B       0  CODE    
-                text0                          007AE0  000064  007B44      3D70       0  CODE    
-                text4                          007B44  000110  007C54      3DA2       0  CODE    
-                text2                          007C54  000110  007D64      3E2A       0  CODE    
-                text3                          007D64  000134  007E98      3EB2       0  CODE    
-                text1                          007E98  000168  008000      3F4C       0  CODE    
+                cstackCOMRAM                   000001  000013  000014         1       1  COMRAM  
+                idataCOMRAM                    007D37  000005  007D3C      7D37       0  CODE    
+                cinit                          007D3C  00002A  007D66      3E9E       0  CODE    
+                text4                          007D66  000044  007DAA      3EB3       0  CODE    
+                text2                          007DAA  000044  007DEE      3ED5       0  CODE    
+                text0                          007DEE  000064  007E52      3EF7       0  CODE    
+                text3                          007E52  000068  007EBA      3F29       0  CODE    
+                text1                          007EBA  00009C  007F56      3F5D       0  CODE    
+                text5                          007F56  0000AA  008000      3FAB       0  CODE    
                 idloc                          200000  000008  200008    200000       0  IDLOC   
                 config                         300000  00000E  30000E    300000       0  CONFIG  
 
@@ -135,15 +138,15 @@ UNUSED ADDRESS RANGES
         BANK5            000500-0005FF              100
         BANK6            000600-0006FF              100
         BANK7            000700-0007FF              100
-        BIGRAM           000010-0007FF              7F0
-        CODE             000004-007AB0             7AAD
-        COMRAM           000010-00005F               50
-        CONST            000004-007AB0             7AAD
+        BIGRAM           000014-0007FF              7EC
+        CODE             000004-007D36             7D33
+        COMRAM           000014-00005F               4C
+        CONST            000004-007D36             7D33
         EEDATA           F00000-F000FF              100
-        MEDIUMCONST      000800-007AB0             72B1
+        MEDIUMCONST      000800-007D36             7537
         RAM              000060-0007FF              100
         SFR              000F60-000FFF               A0
-        SMALLCONST       000800-007AB0              100
+        SMALLCONST       000800-007D36              100
         STACK            000060-0007FF              7A0
 
                                   Symbol Table
@@ -242,7 +245,7 @@ __Hrparam                    rparam       000000
 __Hsfr                       sfr          000000
 __Hsmallconst                smallconst   000000
 __Hspace_0                   (abs)        30000E
-__Hspace_1                   (abs)        000010
+__Hspace_1                   (abs)        000014
 __Hspace_2                   (abs)        000000
 __Hstack                     stack        000000
 __Hstruct                    struct       000000
@@ -253,6 +256,7 @@ __Htext1                     text1        000000
 __Htext2                     text2        000000
 __Htext3                     text3        000000
 __Htext4                     text4        000000
+__Htext5                     text5        000000
 __LRAM                       (abs)        000001
 __Labs1                      abs1         000000
 __Lbank0                     bank0        000000
@@ -318,8 +322,9 @@ __Ltext1                     text1        000000
 __Ltext2                     text2        000000
 __Ltext3                     text3        000000
 __Ltext4                     text4        000000
+__Ltext5                     text5        000000
 __S0                         (abs)        30000E
-__S1                         (abs)        000010
+__S1                         (abs)        000014
 __S2                         (abs)        000000
 ___inthi_sp                  stack        000000
 ___intlo_sp                  stack        000000
@@ -328,66 +333,71 @@ ___rparam_used               (abs)        000001
 ___sp                        stack        000000
 __accesstop                  (abs)        000060
 __activetblptr               (abs)        000002
-__end_of__initialization     cinit        007AD6
-__end_of_main                text0        007B44
-__end_of_secuencial_Efecto1  text4        007C54
-__end_of_secuencial_Efecto2  text3        007E98
-__end_of_secuencial_Efecto3  text2        007D64
-__end_of_secuencial_Efecto4  text1        008000
-__initialization             cinit        007AB6
+__end_of__initialization     cinit        007D5C
+__end_of_main                text0        007E52
+__end_of_secuencial_Efecto1  text4        007DAA
+__end_of_secuencial_Efecto2  text3        007EBA
+__end_of_secuencial_Efecto3  text2        007DEE
+__end_of_secuencial_Efecto4  text1        007F56
+__end_of_velocidad_efecto    text5        008000
+__initialization             cinit        007D3C
 __mediumconst                mediumconst  000000
-__pcinit                     cinit        007AB6
+__pcinit                     cinit        007D3C
 __pcstackCOMRAM              cstackCOMRAM 000001
-__pdataCOMRAM                dataCOMRAM   00000B
-__pidataCOMRAM               idataCOMRAM  007AB1
-__ptext0                     text0        007AE0
-__ptext1                     text1        007E98
-__ptext2                     text2        007C54
-__ptext3                     text3        007D64
-__ptext4                     text4        007B44
+__pdataCOMRAM                dataCOMRAM   00000F
+__pidataCOMRAM               idataCOMRAM  007D37
+__ptext0                     text0        007DEE
+__ptext1                     text1        007EBA
+__ptext2                     text2        007DAA
+__ptext3                     text3        007E52
+__ptext4                     text4        007D66
+__ptext5                     text5        007F56
 __ramtop                     ramtop       000800
 __size_of_main               (abs)        000000
 __size_of_secuencial_Efecto1 (abs)        000000
 __size_of_secuencial_Efecto2 (abs)        000000
 __size_of_secuencial_Efecto3 (abs)        000000
 __size_of_secuencial_Efecto4 (abs)        000000
+__size_of_velocidad_efecto   (abs)        000000
 __smallconst                 smallconst   000000
-_efecto                      dataCOMRAM   00000F
-_main                        text0        007AE0
-_secuencial_Efecto1          text4        007B44
-_secuencial_Efecto2          text3        007D64
-_secuencial_Efecto3          text2        007C54
-_secuencial_Efecto4          text1        007E98
-_velocidad                   dataCOMRAM   00000B
-end_of_initialization        cinit        007AD6
+_efecto                      dataCOMRAM   000013
+_main                        text0        007DEE
+_secuencial_Efecto1          text4        007D66
+_secuencial_Efecto2          text3        007E52
+_secuencial_Efecto3          text2        007DAA
+_secuencial_Efecto4          text1        007EBA
+_velocidad                   dataCOMRAM   00000F
+_velocidad_efecto            text5        007F56
+end_of_initialization        cinit        007D5C
 intlevel0                    text         000000
 intlevel1                    text         000000
 intlevel2                    text         000000
 intlevel3                    text         000000
-secuencial_Efecto1@i         cstackCOMRAM 000003
-secuencial_Efecto2@i         cstackCOMRAM 000007
-secuencial_Efecto2@j         cstackCOMRAM 000005
-secuencial_Efecto3@i         cstackCOMRAM 000003
-secuencial_Efecto4@i         cstackCOMRAM 000004
-secuencial_Efecto4@m         cstackCOMRAM 000006
-secuencial_Efecto4@n         cstackCOMRAM 000008
+secuencial_Efecto1@i         cstackCOMRAM 000007
+secuencial_Efecto2@i         cstackCOMRAM 00000B
+secuencial_Efecto2@j         cstackCOMRAM 000009
+secuencial_Efecto3@i         cstackCOMRAM 000007
+secuencial_Efecto4@i         cstackCOMRAM 000008
+secuencial_Efecto4@m         cstackCOMRAM 00000A
+secuencial_Efecto4@n         cstackCOMRAM 00000C
 stackhi                      (abs)        0007FF
 stacklo                      (abs)        000060
 start                        init         000000
-start_initialization         cinit        007AB6
+start_initialization         cinit        007D3C
+velocidad_efecto@p_velocidad cstackCOMRAM 000001
 
 
 FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 42 in file "Secuencia_Main.c"
+		line 33 in file "Secuencia_Main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
-                  2   28[None  ] int 
+                  2   30[None  ] int 
  Registers used:
 		wreg, status,2, status,0, cstack
  Tracked objects:
@@ -400,7 +410,7 @@ FUNCTION INFORMATION:
       Temps:          1       0       0       0       0       0       0       0       0
       Totals:         1       0       0       0       0       0       0       0       0
 Total ram usage:        1 bytes
- Hardware stack levels required when called:    1
+ Hardware stack levels required when called:    2
  This function calls:
 		_secuencial_Efecto1
 		_secuencial_Efecto2
@@ -413,17 +423,17 @@ Total ram usage:        1 bytes
 
  *************** function _secuencial_Efecto4 *****************
  Defined at:
-		line 114 in file "Secuencia_Main.c"
+		line 109 in file "Secuencia_Main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  i               2    3[COMRAM] int 
-  n               2    7[COMRAM] volatile unsigned int 
-  m               2    5[COMRAM] volatile unsigned int 
+  i               2    7[COMRAM] int 
+  n               2   11[COMRAM] volatile unsigned int 
+  m               2    9[COMRAM] volatile unsigned int 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
-		wreg, status,2, status,0
+		wreg, status,2, status,0, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
@@ -435,8 +445,9 @@ Total ram usage:        1 bytes
       Totals:         9       0       0       0       0       0       0       0       0
 Total ram usage:        9 bytes
  Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
  This function calls:
-		Nothing
+		_velocidad_efecto
  This function is called by:
 		_main
  This function uses a non-reentrant model
@@ -444,15 +455,15 @@ Total ram usage:        9 bytes
 
  *************** function _secuencial_Efecto3 *****************
  Defined at:
-		line 99 in file "Secuencia_Main.c"
+		line 92 in file "Secuencia_Main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  i               2    2[COMRAM] int 
+  i               2    6[COMRAM] int 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
-		wreg, status,2, status,0
+		wreg, status,2, status,0, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
@@ -464,8 +475,9 @@ Total ram usage:        9 bytes
       Totals:         4       0       0       0       0       0       0       0       0
 Total ram usage:        4 bytes
  Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
  This function calls:
-		Nothing
+		_velocidad_efecto
  This function is called by:
 		_main
  This function uses a non-reentrant model
@@ -473,16 +485,16 @@ Total ram usage:        4 bytes
 
  *************** function _secuencial_Efecto2 *****************
  Defined at:
-		line 84 in file "Secuencia_Main.c"
+		line 76 in file "Secuencia_Main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  i               2    6[COMRAM] int 
-  j               2    4[COMRAM] int 
+  i               2   10[COMRAM] int 
+  j               2    8[COMRAM] int 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
-		wreg, status,2, status,0
+		wreg, status,2, status,0, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
@@ -494,8 +506,9 @@ Total ram usage:        4 bytes
       Totals:         8       0       0       0       0       0       0       0       0
 Total ram usage:        8 bytes
  Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
  This function calls:
-		Nothing
+		_velocidad_efecto
  This function is called by:
 		_main
  This function uses a non-reentrant model
@@ -503,15 +516,15 @@ Total ram usage:        8 bytes
 
  *************** function _secuencial_Efecto1 *****************
  Defined at:
-		line 69 in file "Secuencia_Main.c"
+		line 60 in file "Secuencia_Main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  i               2    2[COMRAM] int 
+  i               2    6[COMRAM] int 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
-		wreg, status,2, status,0
+		wreg, status,2, status,0, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
@@ -523,10 +536,43 @@ Total ram usage:        8 bytes
       Totals:         4       0       0       0       0       0       0       0       0
 Total ram usage:        4 bytes
  Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		_velocidad_efecto
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _velocidad_efecto *****************
+ Defined at:
+		line 127 in file "Secuencia_Main.c"
+ Parameters:    Size  Location     Type
+  p_velocidad     2    0[COMRAM] unsigned int 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+      Params:         2       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0
+      Temps:          2       0       0       0       0       0       0       0       0
+      Totals:         4       0       0       0       0       0       0       0       0
+Total ram usage:        4 bytes
+ Hardware stack levels used:    1
  This function calls:
 		Nothing
  This function is called by:
-		_main
+		_secuencial_Efecto1
+		_secuencial_Efecto2
+		_secuencial_Efecto3
+		_secuencial_Efecto4
  This function uses a non-reentrant model
 
 
@@ -535,16 +581,17 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 shared
-		__initialization		CODE           	7AB6	0000	33
+		__initialization		CODE           	7D3C	0000	33
 
 shared estimated size: 33
 
 Secuencia_Main.c
-		_main          		CODE           	7AE0	0000	101
-		_secuencial_Efecto1		CODE           	7B44	0000	273
-		_secuencial_Efecto2		CODE           	7D64	0000	309
-		_secuencial_Efecto3		CODE           	7C54	0000	273
-		_secuencial_Efecto4		CODE           	7E98	0000	361
+		_main          		CODE           	7DEE	0000	101
+		_secuencial_Efecto1		CODE           	7D66	0000	69
+		_secuencial_Efecto2		CODE           	7E52	0000	105
+		_secuencial_Efecto3		CODE           	7DAA	0000	69
+		_secuencial_Efecto4		CODE           	7EBA	0000	157
+		_velocidad_efecto		CODE           	7F56	0000	171
 
-Secuencia_Main.c estimated size: 1317
+Secuencia_Main.c estimated size: 672
 

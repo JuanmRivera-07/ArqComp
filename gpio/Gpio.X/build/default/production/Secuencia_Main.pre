@@ -4863,16 +4863,17 @@ extern __nonreentrant void _delay3(unsigned char);
 
 #pragma config EBTRB = OFF
 
-# 26 "Secuencia_Main.c"
+# 27 "Secuencia_Main.h"
+unsigned char efecto = 1;
+unsigned long velocidad = 1;
+
 void secuencial_Efecto1(void);
 void secuencial_Efecto2(void);
 void secuencial_Efecto3(void);
 void secuencial_Efecto4(void);
+void velocidad_efecto(unsigned int p_velocidad);
 
-unsigned char efecto = 1;
-unsigned long velocidad = 1;
-
-# 42
+# 33 "Secuencia_Main.c"
 int main(void) {
 TRISD = 0;
 LATD = 0;
@@ -4903,45 +4904,27 @@ return 1;
 void secuencial_Efecto1(void) {
 for (int i = 0; i < 8; i++) {
 LATD = 1 << i;
-if(velocidad==1){_delay((unsigned long)((50)*(8000000/4000.0)));}
-else if(velocidad==2){_delay((unsigned long)((100)*(8000000/4000.0)));}
-else if(velocidad==3){_delay((unsigned long)((200)*(8000000/4000.0)));}
-else if(velocidad==4){_delay((unsigned long)((400)*(8000000/4000.0)));}
+velocidad_efecto(velocidad);
 
-if (!PORTBbits.RB6) {
-_delay((unsigned long)((50)*(8000000/4000.0)));
-if(++velocidad==5){velocidad=1;}
-}
+# 73
 }
 }
 
 void secuencial_Efecto2(void) {
 for (int i = 0, j = 7; i < 8; i++, j--) {
 LATD = (1 << i) + (1 << j);
-if(velocidad==1){_delay((unsigned long)((50)*(8000000/4000.0)));}
-else if(velocidad==2){_delay((unsigned long)((100)*(8000000/4000.0)));}
-else if(velocidad==3){_delay((unsigned long)((200)*(8000000/4000.0)));}
-else if(velocidad==4){_delay((unsigned long)((400)*(8000000/4000.0)));}
+velocidad_efecto(velocidad);
 
-if (!PORTBbits.RB6) {
-_delay((unsigned long)((50)*(8000000/4000.0)));
-if(++velocidad==5){velocidad=1;}
-}
+# 89
 }
 }
 
 void secuencial_Efecto3(void) {
 for (int i = 0; i < 9; i++) {
 LATD = (1 << i) - 1;
-if(velocidad==1){_delay((unsigned long)((50)*(8000000/4000.0)));}
-else if(velocidad==2){_delay((unsigned long)((100)*(8000000/4000.0)));}
-else if(velocidad==3){_delay((unsigned long)((200)*(8000000/4000.0)));}
-else if(velocidad==4){_delay((unsigned long)((400)*(8000000/4000.0)));}
+velocidad_efecto(velocidad);
 
-if (!PORTBbits.RB6) {
-_delay((unsigned long)((50)*(8000000/4000.0)));
-if(++velocidad==5){velocidad=1;}
-}
+# 106
 }
 }
 
@@ -4951,14 +4934,19 @@ for (int i = 0; i < 5; i++) {
 LATD = m+n;
 m += (1 << i) & 0x0f;
 n += (1 << (7-i)) & 0xf0;
-if(velocidad==1){_delay((unsigned long)((50)*(8000000/4000.0)));}
-else if(velocidad==2){_delay((unsigned long)((100)*(8000000/4000.0)));}
-else if(velocidad==3){_delay((unsigned long)((200)*(8000000/4000.0)));}
-else if(velocidad==4){_delay((unsigned long)((400)*(8000000/4000.0)));}
+velocidad_efecto(velocidad);
+
+# 125
+}
+}
+void velocidad_efecto(unsigned int p_velocidad){
+if(p_velocidad==1){_delay((unsigned long)((50)*(8000000/4000.0)));}
+else if(p_velocidad==2){_delay((unsigned long)((100)*(8000000/4000.0)));}
+else if(p_velocidad==3){_delay((unsigned long)((200)*(8000000/4000.0)));}
+else if(p_velocidad==4){_delay((unsigned long)((400)*(8000000/4000.0)));}
 
 if (!PORTBbits.RB6) {
 _delay((unsigned long)((50)*(8000000/4000.0)));
-if(++velocidad==5){velocidad=1;}
-}
+if(++p_velocidad==5){p_velocidad=1;}
 }
 }
